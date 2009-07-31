@@ -1,0 +1,6 @@
+DATABASE_ENGINE = 'sqlite3'  
+DATABASE_NAME = 'django_plist_tests.db' 
+DATABASE_USER = ''
+DATABASE_PASSWORD = ''
+DATABASE_HOST = ''           
+DATABASE_PORT = ''

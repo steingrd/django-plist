@@ -1,0 +1,4 @@
+include README
+include INSTALL
+include AUTHORS
+recursive-include *
