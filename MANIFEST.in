@@ -1,4 +1,4 @@
-include README
+include README.markdown
 include INSTALL
 include AUTHORS
-recursive-include *
+recursive-include django_plist *
