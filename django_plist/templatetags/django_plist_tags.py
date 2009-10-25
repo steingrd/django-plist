@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 from django import template
+from django.db.models import Model
 from django.db.models.query import QuerySet
 
 register = template.Library()
@@ -25,6 +26,7 @@ class RenderPlistObjectNode(template.Node):
         return self._render_unknown_object(plist_object)
         
     def _render_unknown_object(self, obj):
+        # TODO perhaps replace this with something more concise, e.g. a dict
         if isinstance(obj, basestring): # FIXME force unicode?
             return self._render_string(obj)
         elif isinstance(obj, bool):
@@ -38,10 +40,12 @@ class RenderPlistObjectNode(template.Node):
         elif isinstance(obj, (list, tuple, QuerySet)):
             return self._render_array(obj)
         else:
-            # TODO render default object if Model class, only bail on unknown
             if hasattr(obj, 'as_plist'):
                 return self._render_unknown_object(obj.as_plist())
+            elif Model in obj.__class__.__bases__:
+                return self._render_dictionary(obj.__dict__)
             else:
+                # FIXME figure out something better to do than returning this string
                 return 'FAILED TO RENDER'            
         
     def _render_boolean(self, obj):

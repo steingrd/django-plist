@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+from django.db import models
+
 from nose.tools import eq_
 
 from django_plist_tags import RenderPlistObjectNode
@@ -63,6 +65,30 @@ def test_recursive_objects():
     eq_(render_object(obj), exp)
     
 # TODO test Model instances, default and as_plist override
+
+class TestModel(models.Model):
+    auto = models.AutoField()
+    boolean = models.BooleanField()
+    char = models.CharField()
+    cvs = models.CommaSeparatedIntegerField()
+    date = models.DateField()
+    datetime = models.DateTimeField()
+    decimal = models.DecimalField()
+    email = models.EmailField()
+    file = models.FileField()
+    filepath = models.FilePathField()
+    image = models.ImageField()
+    integer = models.IntegerField()
+    ipaddress = models.IPAddressField()
+    nullboolean = models.NullBooleanField()
+    positiveint = models.PositiveIntegerField()
+    negativeint = models.PositiveSmallIntegerField()
+    slug = models.SlugField()
+    smallint = models.SmallIntegerField()
+    text = models.TextField()
+    time = models.TimeField()
+    url = models.URLField()
+    xml = models.XMLField()
     
 # utility functions used by tests below
 
