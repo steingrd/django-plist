@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+from datetime import date, datetime, time
+
 from django import template
 from django.db.models import Model
 from django.db.models.query import QuerySet
@@ -27,7 +29,9 @@ class RenderPlistObjectNode(template.Node):
         
     def _render_unknown_object(self, obj):
         # TODO perhaps replace this with something more concise, e.g. a dict
-        if isinstance(obj, basestring): # FIXME force unicode?
+        if obj is None:
+            return self._render_string('None')
+        elif isinstance(obj, basestring): # FIXME force unicode?
             return self._render_string(obj)
         elif isinstance(obj, bool):
             return self._render_boolean(obj)
@@ -39,6 +43,8 @@ class RenderPlistObjectNode(template.Node):
             return self._render_dictionary(obj)
         elif isinstance(obj, (list, tuple, QuerySet)):
             return self._render_array(obj)
+        elif isinstance(obj, (date, datetime, time)):
+            return self._render_date(obj)
         else:
             if hasattr(obj, 'as_plist'):
                 return self._render_unknown_object(obj.as_plist())
@@ -54,6 +60,9 @@ class RenderPlistObjectNode(template.Node):
         else:
             return u'<false/>'
         
+    def _render_date(self, obj):
+        return u'<date>%s</date>' % obj.isoformat()
+
     def _render_string(self, obj):
         return u'<string>%s</string>' % obj
         
