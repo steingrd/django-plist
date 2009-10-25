@@ -31,7 +31,7 @@ def plist_dict(request, queryset, context_processors=None, object_id=None, slug=
     except ObjectDoesNotExist:
         raise Http404, "No %s found matching the query" % (queryset.model._meta.verbose_name)
         
-    context = { 'dict': obj }
+    context = { 'dictionary': obj }
     request_context = RequestContext(request, context, context_processors)
-    template = loader.get_template('django_plist/dict.plist')
+    template = loader.get_template('django_plist/dictionary.plist')
     return HttpResponse(template.render(request_context))
