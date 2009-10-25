@@ -282,15 +282,12 @@ object, not XML and DTD declarations.
 django-plist comes with two shortcut functions for rendering a arrays and
 dict's. 
 
- * `render_array(iterable, context_instance=None)` &mdash; this function takes
-   an iterable object, for example a list, a tuple or a QuerySet and renders
-   the object as a property list array.
+ * `render_array(iterable)` &mdash; this function takes an iterable object,
+   for example a list, a tuple or a QuerySet and renders the object as a
+   property list array.
 
- * `render_dict(dictionary, context_instance=None)` &mdash; this function
-   takes a dictionary object and renders the dict as a property list dict.
-
-Both of these use a `RequestContext` context instance by default, unless a
-`Context` instance is passed into the `context_instance` keyword argument.
+ * `render_dict(dictionary)` &mdash; this function takes a dictionary object
+   and renders the dict as a property list dict.
 
 ## Running tests ##
 
