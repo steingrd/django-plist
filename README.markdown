@@ -171,10 +171,10 @@ as `<dict>` elements and that lists, tuples and querysets are serialized as
     <tr><td>int, IntegerField</td><td>&lt;integer&gt;</td></tr>
     <tr><td>float, FloatField</td><td>&lt;real&gt;</td></tr>
     <tr><td>list, tuple, QuerySet</td><td>&lt;array&gt;</td></tr>
-    <tr><td>dict</td><td>&lt;dict&gt;</td></tr>
+    <tr><td>dict, django.db.Model instances</td><td>&lt;dict&gt;</td></tr>
     <tr><td>bool, BooleanField</td><td>&lt;true&gt;, &lt;false&gt;</td></tr>
-    <tr><td>str, unicode, CharField, TextField, SlugField, URLField, TimeField</td><td>&lt;string&gt;</td></tr>
-    <tr><td>date, datetime, DateField, DateTimeField</td><td>&lt;date&gt;</td></tr>
+    <tr><td>str, unicode, CharField, TextField, SlugField, URLField,</td><td>&lt;string&gt;</td></tr>
+    <tr><td>date, datetime, DateField, DateTimeField, TimeField</td><td>&lt;date&gt;</td></tr>
   </tbody>
 </table>
 
@@ -298,7 +298,7 @@ To run the tests (with `nosetests` installed on your system):
     $ export DJANGO_SETTINGS_MODULE=test_settings
     $ nosetests
 	----------------------------------------------------------------------
-	Ran 8 tests in 0.213s
+	Ran 20 tests in 0.213s
 	
 	OK
 	
