@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 from django.core.exceptions import ObjectDoesNotExist
-from django.core.http import Http404
+from django.http import Http404
 from django.template import RequestContext, loader
 
 # TODO write tests for generic views
