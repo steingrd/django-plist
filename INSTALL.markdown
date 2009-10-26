@@ -16,7 +16,7 @@ This document is written in the Markdown format and contains some inline HTML.
 This document is also available online at
 [http://steingrd.github.com/django-plist/INSTALL.markdown][ghpage].
 
-  [ghpage]: http://steingrd.github.com/django-plist/INSTALL.markdown
+  [ghpage]: http://steingrd.github.com/django-plist/blob/master/INSTALL.markdown
 
 ## Installing with `easy_install` ##
 
