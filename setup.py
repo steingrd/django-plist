@@ -15,7 +15,7 @@ django_plist_templates = [
 ]
 
 setup(name='django-plist',
-      version='0.2',
+      version='0.3',
       author='Steingrim Dovland',
       author_email='steingrd@ifi.uio.no',
       url='http://steingrd.github.com/django-plist/',
