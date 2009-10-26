@@ -19,6 +19,7 @@ setup(name='django-plist',
       author='Steingrim Dovland',
       author_email='steingrd@ifi.uio.no',
       url='http://steingrd.github.com/django-plist/',
+      description='Django app for serializing objects into Cocoa Property List XML',
       packages=django_plist_packages,
       package_data={'django_plist': django_plist_templates},
       classifiers=['Development Status :: 4 - Beta',
@@ -26,4 +27,5 @@ setup(name='django-plist',
                    'Framework :: Django',
                    'Intended Audience :: Developers',
                    'License :: OSI Approved :: BSD License',
+                   'Operating System :: OS Independent'
                    'Programming Language :: Python'])
