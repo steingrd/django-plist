@@ -15,7 +15,15 @@ This document is written in the Markdown format and contains some inline HTML.
 This document is also available online at
 [http://steingrd.github.com/django-plist/docs/overview.markdown][ghpage].
 
-  [ghpage]: http://steingrd.github.com/django-plist/docs/overview.markdown
+  [ghpage]: http://steingrd.github.com/django-plist/blob/master/docs/overview.markdown
+
+## Installing django-plist ##
+
+Please refer to [`INSTALL.markdown`][install] for installation instructions.
+Notice the last section on configuring Django and ensure that you have the
+correct settings in `INSTALLED_APPS` and `TEMPLATE_LOADER`.
+
+  [install]: http://steingrd.github.com/django-plist/blob/master/INSTALL.markdown
 
 ## Using django-plist ##
 
