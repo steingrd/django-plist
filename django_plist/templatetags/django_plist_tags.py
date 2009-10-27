@@ -35,7 +35,7 @@ class RenderPlistObjectNode(template.Node):
             return self._render_string(obj)
         elif isinstance(obj, bool):
             return self._render_boolean(obj)
-        elif isinstance(obj, int):
+        elif isinstance(obj, (int, long)):
             return self._render_integer(obj)
         elif isinstance(obj, float):
             return self._render_real(obj)
