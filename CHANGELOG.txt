@@ -1,0 +1,7 @@
+Changelog
+=========
+
+0.3 - 2009-10-28
+----------------
+- Raises an error when rendering fails, i.e. when the object is not a model,
+  does not have a as_plist() method or is not a basic type. 

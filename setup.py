@@ -7,6 +7,7 @@ django_plist_packages = [
     'django_plist',
     'django_plist.views',
     'django_plist.templatetags',
+    'django_plist.tests',
 ]
 
 django_plist_templates = [
@@ -14,12 +15,33 @@ django_plist_templates = [
     'templates/django_plist/dictionary.plist'
 ]
 
+long_description = """
+============
+django-plist
+============
+
+django-plist is a Django application that trivializes the serialization of
+Django model objects into the XML format used by Property List files on the
+Cocoa platform (iPhone/Mac OS X).
+
+Installing
+==========
+Please refer to `INSTALL.markdown` for installation instructions. Notice the
+last section on configuring Django and ensure that you have the correct
+settings in `INSTALLED_APPS` and `TEMPLATE_LOADER`. 
+
+Using
+=====
+Usage instructions can be found in `docs/overview.markdown` which is also
+available online. """ + "\n" + open('CHANGELOG.txt').read()
+
 setup(name='django-plist',
       version='0.3',
       author='Steingrim Dovland',
       author_email='steingrd@ifi.uio.no',
       url='http://wiki.github.com/steingrd/django-plist',
       description='Django app for serializing objects into Cocoa Property List XML',
+      long_description=long_description,
       packages=django_plist_packages,
       package_data={'django_plist': django_plist_templates},
       classifiers=['Development Status :: 4 - Beta',
