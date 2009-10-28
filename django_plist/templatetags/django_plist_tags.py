@@ -9,6 +9,10 @@ from django.db.models.query import QuerySet
 
 register = template.Library()
 
+class PropertyListSerializationFailedError(Exception):
+    def __init__(self, obj):
+        self.obj = obj
+
 @register.tag(name='render_plist_object')
 def do_render_plist_object(parser, token):
     try:
@@ -51,9 +55,8 @@ class RenderPlistObjectNode(template.Node):
             elif Model in obj.__class__.__bases__:
                 return self._render_dictionary(obj.__dict__)
             else:
-                # FIXME figure out something better to do than returning this string
-                return 'FAILED TO RENDER'            
-        
+                raise PropertyListSerializationFailedError(obj)
+                
     def _render_boolean(self, obj):
         if obj: 
             return u'<true/>'

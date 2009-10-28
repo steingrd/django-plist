@@ -4,7 +4,8 @@ from datetime import date, datetime, time
 from django.db import models
 from django.test import TestCase
 
-from django_plist.templatetags.django_plist_tags import RenderPlistObjectNode
+from django_plist.templatetags.django_plist_tags import RenderPlistObjectNode, \
+    PropertyListSerializationFailedError
 
 
 # TODO implement remaining fields
@@ -69,6 +70,12 @@ class TemplateNodeRenderTest(TestCase):
     def test_booleans_render_as_true_and_false(self):
         self.assertEquals('<true/>', render_object(True))
         self.assertEquals('<false/>', render_object(False))
+
+    def test_non_model_without_as_plist_method_raises_exception(self):
+        class MyClass(object):
+            pass
+        func = lambda: render_object(MyClass())
+        self.assertRaises(PropertyListSerializationFailedError, func)
 
     def test_object_with_as_plist_method(self):
         class MyClass(object):
