@@ -49,5 +49,5 @@ setup(name='django-plist',
                    'Framework :: Django',
                    'Intended Audience :: Developers',
                    'License :: OSI Approved :: BSD License',
-                   'Operating System :: OS Independent'
+                   'Operating System :: OS Independent',
                    'Programming Language :: Python'])
