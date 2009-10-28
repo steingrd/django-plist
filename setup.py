@@ -33,7 +33,7 @@ settings in `INSTALLED_APPS` and `TEMPLATE_LOADER`.
 Using
 =====
 Usage instructions can be found in `docs/overview.markdown` which is also
-available online. """ + "\n" + open('CHANGELOG.txt').read()
+available online. """ + "\n\n" + open('CHANGELOG.txt').read()
 
 setup(name='django-plist',
       version='0.3',
