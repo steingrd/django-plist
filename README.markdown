@@ -10,14 +10,14 @@ Please refer to [`INSTALL.markdown`][install] for installation instructions.
 Notice the last section on configuring Django and ensure that you have the
 correct settings in `INSTALLED_APPS` and `TEMPLATE_LOADER`.
 
-  [install]: http://steingrd.github.com/django-plist/blob/master/INSTALL.markdown
+  [install]: http://github.com/steingrd/django-plist/blob/master/INSTALL.markdown
 
 ## Using django-plist ##
 
 Usage instructions can be found in [`docs/overview.markdown`][overview] which
 is also available online.
 
-  [overview]: http://steingrd.github.com/django-plist/blob/master/docs/overview.markdown
+  [overview]: http://github.com/steingrd/django-plist/blob/master/docs/overview.markdown
 
 
 	
