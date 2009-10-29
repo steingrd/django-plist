@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 from datetime import date, datetime, time
+from xml.sax.saxutils import escape as xml_escape
 
 from django import template
 from django.db.models import Model
@@ -67,7 +68,8 @@ class RenderPlistObjectNode(template.Node):
         return u'<date>%s</date>' % obj.isoformat()
 
     def _render_string(self, obj):
-        return u'<string>%s</string>' % obj
+        escaped_str = xml_escape(u'%s' % obj)
+        return u'<string>%s</string>' % escaped_str
         
     def _render_integer(self, obj):
         return u'<integer>%s</integer>' % obj
