@@ -2,5 +2,6 @@ include README.markdown
 include INSTALL.markdown
 include AUTHORS.txt
 include LICENSE.txt
+include CHANGELOG.txt
 include docs/overview.markdown
 recursive-include django_plist *
