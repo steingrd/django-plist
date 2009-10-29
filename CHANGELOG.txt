@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.4 - 2009-10-29
+----------------
+- Added missing files to Manifest.in which caused build errors when installing
+  with setup.py
+- XML data is now properly escaped in <string>
+
 0.3 - 2009-10-28
 ----------------
 - Raises an error when rendering fails, i.e. when the object is not a model,

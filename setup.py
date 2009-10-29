@@ -36,7 +36,7 @@ Usage instructions can be found in `docs/overview.markdown` which is also
 available online. """ + "\n\n" + open('CHANGELOG.txt').read()
 
 setup(name='django-plist',
-      version='0.3',
+      version='0.4',
       author='Steingrim Dovland',
       author_email='steingrd@ifi.uio.no',
       url='http://wiki.github.com/steingrd/django-plist',
