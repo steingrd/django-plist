@@ -87,7 +87,8 @@ class RenderPlistObjectNode(template.Node):
     def _render_dictionary(self, obj):
         xml = u'<dict>'
         for key, val in obj.items():
-            xml += u'<key>%s</key>' % key
+            escaped_key = xml_escape(u'%s' % key)
+            xml += u'<key>%s</key>' % escaped_key
             xml += self._render_unknown_object(val)
         xml += u'</dict>'
         return xml

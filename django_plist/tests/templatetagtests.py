@@ -55,6 +55,11 @@ class TemplateNodeRenderTest(TestCase):
         expected = u'<string>&lt; &amp; &gt;</string>'
         fragment = render_object('< & >')
         self.assertEquals(expected, fragment)
+        
+    def test_dict_key_names_is_xml_escaped(self):
+        expected = u'<dict><key>&lt;&gt;</key><integer>1</integer></dict>'
+        fragment = render_object({'<>': 1})
+        self.assertEquals(expected, fragment)
 
     def test_tuple_render_as_array(self):
         expected = u'<array><integer>1</integer><integer>2</integer></array>'

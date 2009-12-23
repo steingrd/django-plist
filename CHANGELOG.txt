@@ -1,6 +1,8 @@
 Changelog
 =========
 
+- Dictionary keys are now properly escaped as #PCDATA
+
 0.4 - 2009-10-29
 ----------------
 - Added missing files to Manifest.in which caused build errors when installing
