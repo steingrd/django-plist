@@ -2,6 +2,8 @@ Changelog
 =========
 
 - Dictionary keys are now properly escaped as #PCDATA
+- Fixed bug where render_dictionary() rendered None as a string. None is now
+  rendered as an empty dictionary.
 
 0.4 - 2009-10-29
 ----------------
