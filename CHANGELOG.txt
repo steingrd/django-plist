@@ -1,8 +1,10 @@
 Changelog
 =========
 
-- Dictionary keys are now properly escaped as #PCDATA
-- Fixed bug where render_dictionary() rendered None as a string. None is now
+- Added as_plist keyword argument to render_array shortcut to control 
+  serialization of objects without altering Model classes.
+- Bug: Dictionary keys are now properly escaped as #PCDATA
+- Bug: render_dictionary() rendered None as a string. None is now
   rendered as an empty dictionary.
 
 0.4 - 2009-10-29

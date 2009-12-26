@@ -17,6 +17,12 @@ class RenderArrayTest(TestCase):
         response = render_array([1,2,3])
         self.assertContains(response, '<array><integer>1</integer><integer>2</integer><integer>3</integer></array>')
         
+    def test_as_plist_kwarg_is_invoked_on_iterable_objects(self):
+        def to_int(binary):
+            return int(binary, 2)
+        response = render_array(['1', '10', '11'], as_plist=to_int)
+        self.assertContains(response, '<array><integer>1</integer><integer>2</integer><integer>3</integer></array>')
+        
         
 class RenderDictionaryTest(TestCase):
     

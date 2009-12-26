@@ -195,9 +195,15 @@ Optional arguments:
 django-plist comes with two shortcut functions for rendering a arrays and
 dict's. 
 
- * `render_array(iterable)` &mdash; this function takes an iterable object,
-   for example a list, a tuple or a QuerySet and renders the object as a
-   property list array.
+ * `render_array(iterable, as_plist=None)` &mdash; this function takes an
+   iterable object, for example a list, a tuple or a QuerySet and renders the
+   object as a property list array.
+
+   The optional keyword argument `as_plist` takes a callable that accepts a
+   single object from the iterable. The callable should return a dict, just
+   like the `as_plist` method in Model classes. Use this keyword argument to
+   pass a callable that customizes serialization without altering the Model
+   class.
 
  * `render_dict(dictionary)` &mdash; this function takes a dictionary object
    and renders the dict as a property list dict.
