@@ -5,15 +5,15 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404, HttpResponse
 from django.template import RequestContext, loader
 
-# TODO write tests for generic views
 
 def plist_array(request, queryset, context_processors=None, allow_empty=None):
-    context = { 'array': queryset }
-    request_context = RequestContext(request, context, context_processors)
-    
+    queryset = queryset._clone()
     if not allow_empty and len(queryset) == 0:
         raise Http404
-        
+    
+    context = { 'array': queryset }
+    request_context = RequestContext(request, context, context_processors)
+            
     template = loader.get_template('django_plist/array.plist')
     return HttpResponse(template.render(request_context))
     
