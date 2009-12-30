@@ -8,11 +8,13 @@ django_plist_packages = [
     'django_plist.views',
     'django_plist.templatetags',
     'django_plist.tests',
+    'django_plist.tests.testapp'
 ]
 
 django_plist_templates = [
     'templates/django_plist/array.plist',
-    'templates/django_plist/dictionary.plist'
+    'templates/django_plist/dictionary.plist',
+    'tests/testapp/fixtures/authors.json'
 ]
 
 long_description = """

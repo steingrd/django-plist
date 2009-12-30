@@ -2,7 +2,9 @@ Changelog
 =========
 
 - Added as_plist keyword argument to render_array shortcut to control 
-  serialization of objects without altering Model classes.
+  serialization of objects without altering Model classes, see updated
+  documentation in docs/overview.markdown.
+- Tests: Added test suites for shortcut functions and generic views
 - Bug: Dictionary keys are now properly escaped as #PCDATA
 - Bug: render_dictionary() rendered None as a string. None is now
   rendered as an empty dictionary.
