@@ -116,7 +116,13 @@ class TemplateNodeRenderTest(TestCase):
         class DateTimeModel(models.Model):
             datetime = models.DateTimeField()
         fragment = render_object(DateTimeModel(datetime=datetime(2009,10,22,15,5,45)))
-        expected = '<dict>%s<key>datetime</key><date>2009-10-22T15:05:45</date></dict>'  % NONE_FIELD
+        expected = '<dict>%s<key>datetime</key><date>2009-10-22T15:05:45Z</date></dict>'  % NONE_FIELD
+        self.assertEquals(expected, fragment)
+
+    def test_datetime_does_not_render_fractions_of_seconds(self):
+        now = datetime.now()
+        fragment = render_object(now)
+        expected = '<date>%s</date>' % now.strftime("%Y-%m-%dT%H:%M:%SZ")
         self.assertEquals(expected, fragment)
 
     def test_ipaddress_model_field(self):

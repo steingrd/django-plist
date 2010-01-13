@@ -48,8 +48,12 @@ class RenderPlistObjectNode(template.Node):
             return self._render_dictionary(obj)
         elif isinstance(obj, (list, tuple, QuerySet)):
             return self._render_array(obj)
-        elif isinstance(obj, (date, datetime, time)):
+        elif isinstance(obj, datetime):
+            return self._render_datetime(obj)
+        elif isinstance(obj, date):
             return self._render_date(obj)
+        elif isinstance(obj, time):
+            return self._render_time(obj)
         else:
             if hasattr(obj, 'as_plist'):
                 return self._render_unknown_object(obj.as_plist())
@@ -63,9 +67,15 @@ class RenderPlistObjectNode(template.Node):
             return u'<true/>'
         else:
             return u'<false/>'
-        
+
+    def _render_time(self, obj):
+        return u'<date>%s</date>' % obj.strftime("%H:%M:%S")
+
     def _render_date(self, obj):
-        return u'<date>%s</date>' % obj.isoformat()
+        return u'<date>%s</date>' % obj.strftime("%Y-%m-%d")
+
+    def _render_datetime(self, obj):
+        return u'<date>%s</date>' % obj.strftime("%Y-%m-%dT%H:%M:%SZ")
 
     def _render_string(self, obj):
         escaped_str = xml_escape(u'%s' % obj)
