@@ -3,3 +3,5 @@ dist
 MANIFEST
 *.tmproj
 *.pyc
+cocoa_tests/test_dict
+cocoa_tests/test_dict.plist
