@@ -1,6 +1,8 @@
 Changelog
 =========
 
+0.5 - 2010-01-19
+----------------
 - Added as_plist keyword argument to render_array shortcut to control 
   serialization of objects without altering Model classes, see updated
   documentation in docs/overview.markdown.

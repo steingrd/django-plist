@@ -73,7 +73,7 @@ default:
       <key>body</key>
       <string>Shortest blog post evah?</string>
       <key>published</key>
-      <date>2009-07-06T10:23Z</date>
+      <date>2009-07-06T10:23:00Z</date>
     </dict>
 
 Each field is represented as a key-value pair, the key is the name of the
@@ -99,8 +99,8 @@ as `<dict>` elements and that lists, tuples and querysets are serialized as
     <tr><td>list, tuple, QuerySet</td><td>&lt;array&gt;</td></tr>
     <tr><td>dict, django.db.Model instances</td><td>&lt;dict&gt;</td></tr>
     <tr><td>bool, BooleanField</td><td>&lt;true&gt;, &lt;false&gt;</td></tr>
-    <tr><td>str, unicode, CharField, TextField, SlugField, URLField,</td><td>&lt;string&gt;</td></tr>
-    <tr><td>date, datetime, DateField, DateTimeField, TimeField</td><td>&lt;date&gt;</td></tr>
+    <tr><td>str, unicode, CharField, TextField, SlugField, URLField, TimeField</td><td>&lt;string&gt;</td></tr>
+    <tr><td>date, datetime, DateField, DateTimeField</td><td>&lt;date&gt;</td></tr>
   </tbody>
 </table>
 
