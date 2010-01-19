@@ -109,7 +109,7 @@ class TemplateNodeRenderTest(TestCase):
         class DateModel(models.Model):
             date = models.DateField()
         fragment = render_object(DateModel(date=date(2009,10,22)))
-        expected = '<dict><key>date</key><date>2009-10-22</date>%s</dict>' % NONE_FIELD
+        expected = '<dict><key>date</key><date>2009-10-22T00:00:00Z</date>%s</dict>' % NONE_FIELD
         self.assertEquals(expected, fragment)
 
     def test_datetime_model_field(self):
