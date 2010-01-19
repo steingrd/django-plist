@@ -5,10 +5,16 @@ Changelog
   serialization of objects without altering Model classes, see updated
   documentation in docs/overview.markdown.
 - Tests: Added test suites for shortcut functions and generic views
+- Tests: Added Cocoa integration tests in cocoa_tests/. These require a 
+  functional GCC/Cocoa suite to run.
 - Bug: Dictionary keys are now properly escaped as #PCDATA
 - Bug: render_dictionary() rendered None as a string. None is now
   rendered as an empty dictionary.
-- Bug: datetime objects should not output fractions of seconds.
+- Bug: datetime.datetime objects should not output fractions of seconds.
+- Bug: datetime.date objects should render with T00:00:00, Cocoa fails to 
+  read the property list otherwise.
+- Bug: datetime.time objects now render as string, Cocoa apps barf on the
+  <date>HH:MM:SS</date> elements.
 
 0.4 - 2009-10-29
 ----------------
