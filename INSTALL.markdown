@@ -14,9 +14,9 @@ Django project to use django-plist.
 
 This document is written in the Markdown format and contains some inline HTML.
 This document is also available online at
-[http://steingrd.github.com/django-plist/INSTALL.markdown][install].
+[http://github.com/steingrd/django-plist/blob/master/INSTALL.markdown][install].
 
-  [install]: http://steingrd.github.com/django-plist/blob/master/INSTALL.markdown
+  [install]: http://github.com/steingrd/django-plist/blob/master/INSTALL.markdown
 
 ## Installing with `easy_install` ##
 
@@ -42,7 +42,7 @@ Or if you prefer `pip`:
 
 If you prefer to manually install packages or to use `distutils` from the
 command line you can download the latest stable version of django-plist from
-[http://steingrd.github.com/django-plist/][ghpage].
+[http://pypi.python.org/pypi/django-plist][pypy2].
 
 Extract the downloaded file, inside the directory named
 `django-plist` you'll find a directory named `django_plist`. Either move (or
@@ -62,7 +62,7 @@ django-plist repository can be checked out from Github by typing:
 The instructions for installing from a source code tarball applies to a Git
 checkout as well.
 
-  [ghpage]: http://steingrd.github.com/django-plist/
+  [pypy2]: http://pypi.python.org/pypi/django-plist
 
 ## Configuring Django ##
 
