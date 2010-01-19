@@ -101,7 +101,7 @@ class TemplateNodeRenderTest(TestCase):
     def test_time_model_field(self):
         class TimeModel(models.Model):
             time = models.TimeField()
-        expected = '<dict>%s<key>time</key><date>15:05:45</date></dict>' % NONE_FIELD
+        expected = '<dict>%s<key>time</key><string>15:05:45</string></dict>' % NONE_FIELD
         fragment = render_object(TimeModel(time=time(15,05,45)))
         self.assertEquals(expected, fragment)
 

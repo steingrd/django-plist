@@ -67,7 +67,7 @@ class RenderPlistObjectNode(template.Node):
             return u'<false/>'
 
     def _render_time(self, obj):
-        return u'<date>%s</date>' % obj.strftime("%H:%M:%S")
+        return u'<string>%s</string>' % obj.strftime("%H:%M:%S")
 
     def _render_datetime(self, obj):
         return u'<date>%s</date>' % obj.strftime("%Y-%m-%dT%H:%M:%SZ")
