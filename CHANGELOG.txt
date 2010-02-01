@@ -1,6 +1,9 @@
 Changelog
 =========
 
+- PropertyListSerializationFailedError now sends a meaningful message to
+  Exception.__init__ to make stacktraces useful when debugging.
+
 0.5 - 2010-01-19
 ----------------
 - Added as_plist keyword argument to render_array shortcut to control 

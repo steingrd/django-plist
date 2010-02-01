@@ -12,7 +12,8 @@ register = template.Library()
 
 class PropertyListSerializationFailedError(Exception):
     def __init__(self, obj):
-        self.obj = obj
+        message = 'Failed to serialize object of type "%s"' % str(type(obj))
+        super(PropertyListSerializationFailedError, self).__init__(message)
 
 @register.tag(name='render_plist_object')
 def do_render_plist_object(parser, token):
