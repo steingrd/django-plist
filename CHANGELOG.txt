@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.6 - 2010-05-20
+----------------
+- Do not serialize private model fields. Fixes bug introduced with multi
+  database support in Django 1.2.
 - PropertyListSerializationFailedError now sends a meaningful message to
   Exception.__init__ to make stacktraces useful when debugging.
 
